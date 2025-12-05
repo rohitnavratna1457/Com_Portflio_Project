@@ -1,7 +1,7 @@
 // import { keyboard } from "@testing-library/user-event/dist/keyboard";
 // import React from "react";
 
-const baseURL = "http://127.0.0.1:8000"  //Backend url (base url)
+const baseURL = "https://infotechitservices.in/"  //Backend url (base url)
 
 
 const config = {
