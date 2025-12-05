@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account', 
     'rest_framework',
-    'rest_framework.authtoken',  # <--- REQUIRED
+    # 'rest_framework.authtoken',  # <--- REQUIRED
     "corsheaders",
 
 ]
@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 
 # settings.py 
 # Custom user with the help of the abstract users 
-AUTH_USER_MODEL = 'account.CustomUser'  # Point to your custom user model
+# AUTH_USER_MODEL = 'account.CustomUser'  # Point to your custom user model
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
