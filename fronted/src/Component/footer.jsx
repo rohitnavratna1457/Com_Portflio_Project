@@ -229,7 +229,7 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        © 2025 TechPortfolio. All rights reserved.
+        © 2025 Infotech Service. All rights reserved.
       </div>
     </footer>
   );
