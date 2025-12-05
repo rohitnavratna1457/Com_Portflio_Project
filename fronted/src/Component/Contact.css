@@ -1,0 +1,191 @@
+/* Main Section */
+
+
+.contact {
+  background: #0a0f1f;
+  padding: 100px 20px;
+  color: #e2e8f0;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  width: 100%;                     /* Full width line */
+  background: linear-gradient(to right, #0a0f1f, #00d1ff, #0a0f1f);
+  opacity: 0.8;
+  transition: 0.4s ease-in-out;     /* Smooth hover effect */
+  margin: 45px 0;
+}
+
+/* Hover Effect (Glow + Solid Neon) */
+hr:hover {
+  background: #00d1ff;
+  box-shadow: 0 0 10px #00d1ff, 0 0 25px #00d1ff;
+  opacity: 1;
+}
+
+
+
+.contact__container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Title */
+.contact__title {
+  font-size: 2.6rem;
+  color: #00d1ff;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contact__subtitle {
+  color: #a9b8d4;
+  max-width: 650px;
+  margin: auto;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+/* Contact Cards Grid */
+.contact__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.contact__card {
+  background: #111827;
+  padding: 35px 25px;
+  border-radius: 12px;
+  border: 2px solid #1e293b;
+  transition: border-color 0.3s ease;
+}
+
+/* Hover = Only Border Change */
+.contact__card:hover {
+  border-color: #00d1ff;
+}
+
+.contact__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00d1ff;
+  color: #000;
+  border-radius: 50%;
+  font-size: 23px;
+  margin: 0 auto 15px auto;
+}
+
+.contact__card-title {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.contact__card-info {
+  margin-top: 5px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* Contact Form */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact__row {
+  display: flex;
+  gap: 15px;
+}
+
+.contact__row input {
+  flex: 1;
+}
+
+.contact__form input,
+.contact__form textarea {
+  background: #111827;
+  border: 1px solid #334155;
+  padding: 14px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  border-color: #00d1ff;
+  box-shadow: 0 0 8px rgba(0,209,255,0.4);
+}
+
+/* Submit Button */
+.contact__button {
+  padding: 14px;
+  background: #00d1ff;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact__button:hover {
+  background: #00a8cc;
+}
+
+/* =========================
+   📱 Responsive Breakpoints
+   ========================= */
+
+/* Tablet and mid devices */
+@media (max-width: 900px) {
+  .contact__title {
+    font-size: 2.2rem;
+  }
+  .contact__subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .contact__row {
+    flex-direction: column;
+  }
+  .contact__title {
+    font-size: 2rem;
+  }
+  .contact__cards {
+    gap: 20px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .contact {
+    padding: 70px 15px;
+  }
+  .contact__title {
+    font-size: 1.8rem;
+  }
+  .contact__icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .contact__card {
+    padding: 28px 18px;
+  }
+}

@@ -1,0 +1,146 @@
+/* Base Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+/* Scroll Effect */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #ff6b6b;
+}
+
+/* Menu Items */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu li button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(255, 107, 107, 0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.menu li button:hover::after {
+  height: 100%;
+}
+
+.menu li button:hover {
+  color: #ff6b6b;
+  transform: translateY(-3px);
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate Hamburger into X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Mobile Responsive Menu */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border-radius: 15px;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    gap: 15px;
+
+    /* Initial hidden state */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    background: rgba(255, 255, 255, 0); /* start fully transparent */
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  /* Active menu: slide down, fade in, BG color change */
+  .menu.active {
+    max-height: 500px; /* enough for all items */
+    opacity: 1;
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.05); /* visible glass BG */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

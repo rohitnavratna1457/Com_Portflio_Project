@@ -1,0 +1,123 @@
+.testimonials {
+  padding: 90px 20px;
+  background: radial-gradient(circle at top, #0a0f1f, #0a0f1f 40%, #020617);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #e2e8f0;
+}
+
+/* Center container */
+.testimonials .container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* Titles */
+.testimonials__title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #00d1ff;
+  margin-bottom: 15px;
+}
+
+.testimonials__subtitle {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  margin-bottom: 50px;
+}
+
+/* Grid with min & max card control */
+.testimonials__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* auto responsive */
+  gap: 32px;
+  justify-content: center;
+}
+
+/* Card */
+.testimonial__card {
+  background: #111827;
+  padding: 35px;
+  border-radius: 18px;
+
+  /* ⭐ Card size control */
+  min-width: 260px;
+  max-width: 350px;     /* Max size control */
+  width: 100%;
+  margin: auto;
+
+  min-height: 320px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 8px 30px rgba(0, 209, 255, 0.10);
+  transition: .4s ease;
+  transform: translateY(20px);
+  overflow: hidden;
+}
+
+.testimonial__card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #00d1ff;
+  box-shadow: 0 12px 35px rgba(0,209,255,0.28);
+}
+
+/* Quote */
+.testimonial__quote {
+  font-size: 42px;
+  color: #00d1ff;
+  margin-bottom: 15px;
+}
+
+/* Text */
+.testimonial__text {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+/* Profile */
+.testimonial__profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.testimonial__profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #00d1ff;
+}
+
+.testimonial__name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.testimonial__title {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Animation */
+.fadeUpAnim {
+  opacity: 0;
+  animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:600px) {
+  .testimonials { padding: 60px 15px; }
+  .testimonials__title { font-size: 2.2rem; }
+  .testimonials__subtitle { font-size: 1rem; margin-bottom: 32px; }
+
+  .testimonial__card {
+    padding: 28px;
+    min-height: auto;
+  }
+}

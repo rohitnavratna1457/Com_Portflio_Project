@@ -1,0 +1,226 @@
+/* =============== GLOBAL RESET =============== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0c0f14;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* =============== HERO SECTION =============== */
+.home-hero-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video Background */
+.home-hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(55%) saturate(120%);
+}
+
+/* =============== NAVBAR =============== */
+.home-navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+}
+
+.home-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00e6ff;
+  letter-spacing: 1px;
+}
+
+.home-menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.home-menu li button {
+  background: none;
+  border: none;
+  color: #e6faff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.home-menu li button:hover {
+  color: #00e6ff;
+  transform: scale(1.08);
+}
+
+/* =============== HERO CONTENT =============== */
+.home-hero-content {
+  position: relative;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+  opacity: 0;
+  transition: 1.2s ease;
+}
+
+.home-hero-content.visible {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.home-badge {
+  background: rgba(0, 234, 255, 0.18);
+  border: 1px solid #00e6ff;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.home-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.home-highlight {
+  color: #00e6ff;
+  text-shadow: 0 0 12px #00e6ff;
+}
+
+.home-hero-content p {
+  margin: 18px 0 30px;
+  font-size: 1.05rem;
+  color: #d9e7f1;
+}
+
+/* Buttons */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.home-btn {
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.home-btn.primary {
+  background: #00e6ff;
+  border: none;
+  color: #001017;
+  font-weight: 600;
+}
+
+.home-btn.primary:hover {
+  background: #00a8c6;
+}
+
+.home-btn.outline {
+  background: transparent;
+  border: 1.5px solid #00e6ff;
+  color: #00e6ff;
+}
+
+.home-btn.outline:hover {
+  background: #00e6ff;
+  color: #00141a;
+}
+
+/* Scroll Icon */
+.home-scroll-icon {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  animation: bounce 1.8s infinite;
+  color: #00e6ff;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translate(-50%,0); }
+  50% { transform: translate(-50%,8px); }
+}
+
+/* =============== SECTIONS =============== */
+.home-section {
+  /* padding: 90px 0; */
+  position: relative;
+  z-index: 5;
+}
+
+/* Fade In Animation */
+.home-fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .9s ease;
+}
+
+.home-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============== RESPONSIVE =============== */
+@media (max-width:900px) {
+  .home-navbar {
+    padding: 16px 25px;
+  }
+
+  .home-menu {
+    gap: 20px;
+  }
+
+  .home-hero-content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width:600px) {
+  .home-navbar {
+    justify-content: space-between;
+  }
+
+  .home-menu {
+    display: none; /* Ready for toggle feature */
+  }
+
+  .home-hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

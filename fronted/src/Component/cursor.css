@@ -1,0 +1,40 @@
+
+
+.custom-cursor {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  /* Gradient that animates */
+background: radial-gradient(circle at center,
+    rgba(244, 63, 94, 0.8),
+    rgba(249, 115, 22, 0.6),
+    rgba(234, 179, 8, 0.4),
+    rgba(0, 0, 0, 0)
+);
+
+
+
+  filter: blur(25px);
+  animation: cursorGradient 6s infinite linear;
+}
+
+/* Animated gradient movement */
+@keyframes cursorGradient {
+  0% {
+    background-position: 0% 0%;
+    filter: blur(25px);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: blur(28px);
+  }
+  100% {
+    background-position: 0% 0%;
+    filter: blur(25px);
+  }
+}
