@@ -24,13 +24,14 @@ const servicesData = [
     description: "Android & iOS applications using Flutter & React Native...",
     link: "#mobile-dev",
   },
-  {
-    id: 4,
-    icon: "&#128200;",
-    title: "Digital Marketing",
-    description: "SEO, social media marketing & brand strategy...",
-    link: "#digital-marketing",
-  },
+ {
+  id: 4,
+  icon: "🤖",
+  title: "AI Solutions",
+  description: "AI automation, machine learning tools & smart business systems...",
+  link: "#ai-solutions",
+},
+
   {
     id: 5,
     icon: "&#9729;",
