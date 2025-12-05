@@ -3,6 +3,6 @@ from .models import *
 # Register your models here.
 
 
-admin.site.register(CustomUser)
-admin.site.register(Client_Feedback)
-admin.site.register(Email_Suscribe)
+# admin.site.register(CustomUser)
+admin.site.register(ClientFeedback)
+admin.site.register(EmailSubscribe)
