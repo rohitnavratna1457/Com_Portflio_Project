@@ -3,6 +3,10 @@ import "./Contact.css";
 import { UserDataPost } from "../Api/CoreApi";
 import { message } from "antd";
 
+import { GrMapLocation } from "react-icons/gr";
+import { TfiEmail } from "react-icons/tfi";
+import { FaPhoneVolume } from "react-icons/fa6";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -59,19 +63,19 @@ export default function Contact() {
         {/* Contact Info Cards */}
         <div className="contact__cards">
           <div className="contact__card">
-            <div className="contact__icon">📞</div>
+            <div className="contact__icon">< FaPhoneVolume /></div>
             <h3 className="contact__card-title">Phone</h3>
             <p className="contact__card-info">+91 8962813719</p>
           </div>
 
           <div className="contact__card">
-            <div className="contact__icon">✉️</div>
+            <div className="contact__icon">< TfiEmail /></div>
             <h3 className="contact__card-title">Email</h3>
             <p className="contact__card-info">infotechcareer@gmail.com</p>
           </div>
 
           <div className="contact__card">
-            <div className="contact__icon">📍</div>
+            <div className="contact__icon">< GrMapLocation /></div>
             <h3 className="contact__card-title">Location</h3>
             <p className="contact__card-info">Bangalore, Karnataka</p>
           </div>

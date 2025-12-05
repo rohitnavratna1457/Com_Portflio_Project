@@ -17,7 +17,7 @@
 
 /* Scroll Effect */
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.955);
   box-shadow: 0 8px 35px rgba(0, 0, 0, 0.5);
 }
 
@@ -109,35 +109,36 @@
 }
 
 
-/* Mobile Responsive Menu */
+/* ----------------------------- */
+/*     Mobile Responsive Menu    */
+/* ----------------------------- */
 @media (max-width: 768px) {
   .menu {
     position: absolute;
     top: 70px;
-    right: 20px;
-    border-radius: 15px;
+    right: 0;
+    width: 100%;              /* FULL WIDTH */
+    border-radius: 0 0 15px 15px;
     flex-direction: column;
-    width: 220px;
     padding: 20px;
     gap: 15px;
 
-    /* Initial hidden state */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transform: translateY(-20px);
-    background: rgba(255, 255, 255, 0); /* start fully transparent */
+    background: rgba(5, 5, 5, 0.907);
     transition: all 0.4s ease;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
   }
 
-  /* Active menu: slide down, fade in, BG color change */
+  /* Active menu */
   .menu.active {
-    max-height: 500px; /* enough for all items */
+    max-height: 500px;
     opacity: 1;
     transform: translateY(0);
-    background: rgba(255, 255, 255, 0.05); /* visible glass BG */
+    background: rgba(140, 197, 255, 0.905);
   }
 
   .hamburger {

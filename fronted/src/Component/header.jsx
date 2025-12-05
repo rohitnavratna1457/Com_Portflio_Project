@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './header.css';
+import "./header.css";
 
 export default function Header({ scrollToSection }) {
   const [scrolled, setScrolled] = useState(false);
@@ -9,10 +9,14 @@ export default function Header({ scrollToSection }) {
     const handleScroll = () => {
       if (window.scrollY > 50) setScrolled(true);
       else setScrolled(false);
+
+      // AUTO CLOSE MENU ON SCROLL
+      if (menuOpen) setMenuOpen(false);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [menuOpen]); // Watch menuOpen state
 
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
@@ -20,12 +24,12 @@ export default function Header({ scrollToSection }) {
 
   const handleClick = (section) => {
     scrollToSection(section);
-    setMenuOpen(false); // Close menu on selection
+    setMenuOpen(false); // Close menu on click
   };
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="logo">Infotech Service </div>
+      <div className="logo">Infotech Service</div>
 
       <ul className={`menu ${menuOpen ? "active" : ""}`}>
         <li><button onClick={() => handleClick("home")}>Home</button></li>
@@ -35,7 +39,6 @@ export default function Header({ scrollToSection }) {
         <li><button onClick={() => handleClick("contact")}>Contact</button></li>
       </ul>
 
-      {/* Hamburger */}
       <div
         className={`hamburger ${menuOpen ? "active" : ""}`}
         onClick={handleMenuToggle}

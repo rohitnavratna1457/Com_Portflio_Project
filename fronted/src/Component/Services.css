@@ -7,6 +7,16 @@
   position: relative;
 }
 
+.service-icon {
+  font-size: 3rem;
+  color: #4f8ef7; /* Icon color */
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* Floating Bubble Background Effect */
 .services-section::before,
 .services-section::after {

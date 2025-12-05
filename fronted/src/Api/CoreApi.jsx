@@ -89,7 +89,6 @@ export const EmailDataRemove = async (id) => {
     {
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${accessToken}`,
       }
     }
   ).catch(() => message.error("Delete failed"));
