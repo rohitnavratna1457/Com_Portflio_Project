@@ -2,7 +2,7 @@ import { message } from "antd";
 import API from "./Api"; // import Api.jsx
 
 export const UserDataGet = async () => {
-  const response = await API.get("feedback/", {
+  const response = await API.get("account/feedback/", {
     headers: { "Content-Type": "application/json" }
   }).catch(() => message.error("Fetching data failed"));
 
@@ -11,7 +11,7 @@ export const UserDataGet = async () => {
 
 export const UserDataPost = async (values) => {
   const response = await API.post(
-    "feedback/",
+    "account/feedback/",
     values,
     { headers: { "Content-Type": "application/json" } }
   ).catch(() => message.error("Failed to send message"));
@@ -21,7 +21,7 @@ export const UserDataPost = async (values) => {
 
 export const UserDataUpdate = async (id, value) => {
   const response = await API.put(
-    `feedback/${id}/`,
+    `account/feedback/${id}/`,
     value,
     { headers: { "Content-Type": "application/json" } }
   ).catch(() => message.error("Update failed"));
@@ -30,7 +30,7 @@ export const UserDataUpdate = async (id, value) => {
 };
 
 export const UserDataRemove = async (id) => {
-  const response = await API.delete(`feedback/${id}/`, {
+  const response = await API.delete(`account/feedback/${id}/`, {
     headers: { "Content-Type": "application/json" }
   }).catch(() => message.error("Delete failed"));
 
@@ -44,7 +44,7 @@ export const UserDataRemove = async (id) => {
 // 🔵 GET — All email subscribers
 export const EmailDataGet = async () => {
   const response = await API.get(
-    "email_suscribe/",
+    "account/email_suscribe/",
     {
       headers: { "Content-Type": "application/json" }
     }
@@ -57,7 +57,7 @@ export const EmailDataGet = async () => {
 // 🔵 POST — Add new email subscriber
 export const EmailDataPost = async (values) => {
   const response = await API.post(
-    "email_suscribe/",
+    "account/email_suscribe/",
     values,
     {
       headers: { "Content-Type": "application/json" }
@@ -71,7 +71,7 @@ export const EmailDataPost = async (values) => {
 // 🔵 UPDATE — Update email subscriber
 export const EmailDataUpdate = async (id, value) => {
   const response = await API.put(
-    `email_suscribe/${id}/`,
+    `account/email_suscribe/${id}/`,
     value,
     {
       headers: { "Content-Type": "application/json" }
@@ -85,10 +85,11 @@ export const EmailDataUpdate = async (id, value) => {
 // 🔵 DELETE — Remove email subscriber
 export const EmailDataRemove = async (id) => {
   const response = await API.delete(
-    `email_suscribe/${id}/`,
+    `account/email_suscribe//${id}/`,
     {
       headers: {
         "Content-Type": "application/json",
+        // Authorization: `Bearer ${accessToken}`,
       }
     }
   ).catch(() => message.error("Delete failed"));

@@ -3,17 +3,17 @@ import "./Contact.css";
 import { UserDataPost } from "../Api/CoreApi";
 import { message } from "antd";
 
-import { GrMapLocation } from "react-icons/gr";
-import { TfiEmail } from "react-icons/tfi";
-import { FaPhoneVolume } from "react-icons/fa6";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",   // ⭐ Added Correct Key
     subject: "",
     message: "",
   });
+
+  console.log(formData)
 
   // Handle input change
   const handleChange = (e) => {
@@ -28,20 +28,20 @@ export default function Contact() {
     e.preventDefault();
 
     try {
-      const response = await UserDataPost(formData); // ✔ Correct usage
+      const response = await UserDataPost(formData);
       console.log("Success:", response);
 
       message.success({
         content: "🎉 Message Sent Successfully!",
         duration: 3,
-        style: {
-          marginTop: "10vh",
-        },
+        style: { marginTop: "10vh" },
       });
+
       // Reset form
       setFormData({
         name: "",
         email: "",
+        phone: "",   // ⭐ Reset phone
         subject: "",
         message: "",
       });
@@ -63,19 +63,19 @@ export default function Contact() {
         {/* Contact Info Cards */}
         <div className="contact__cards">
           <div className="contact__card">
-            <div className="contact__icon">< FaPhoneVolume /></div>
+            <div className="contact__icon">📞</div>
             <h3 className="contact__card-title">Phone</h3>
             <p className="contact__card-info">+91 8962813719</p>
           </div>
 
           <div className="contact__card">
-            <div className="contact__icon">< TfiEmail /></div>
+            <div className="contact__icon">✉️</div>
             <h3 className="contact__card-title">Email</h3>
             <p className="contact__card-info">infotechcareer@gmail.com</p>
           </div>
 
           <div className="contact__card">
-            <div className="contact__icon">< GrMapLocation /></div>
+            <div className="contact__icon">📍</div>
             <h3 className="contact__card-title">Location</h3>
             <p className="contact__card-info">Bangalore, Karnataka</p>
           </div>
@@ -102,12 +102,13 @@ export default function Contact() {
               onChange={handleChange}
             />
           </div>
+
           <input
             type="tel"
             name="phone"
             placeholder="Your Mobile Number"
             required
-            value={formData.mobile}
+            value={formData.phone}   // ⭐ Correct value
             onChange={handleChange}
             pattern="[0-9]{10}"
             maxLength="10"
