@@ -15,6 +15,10 @@ from django.db import models
 
 
 class ClientFeedback(models.Model):
+    
+    """" 
+    
+    """
     name = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField()
     phone = models.CharField(max_length=12, blank=True, null=True)
